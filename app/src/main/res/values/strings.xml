@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Palapan</string>
+    <string name="continue_1">Continue</string>
+    <string name="new_game">New game</string>
+    <string name="congratulations_nyou_are_winner">Congratulations!\nYou are winner</string>
+    <string name="easy">Easy</string>
+    <string name="menu">Difficulty</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+</resources>

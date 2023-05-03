@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/levelScreen">
+
+    <fragment
+        android:id="@+id/levelScreen"
+        android:name="uz.gita.dima.palapan.presenter.screens.level.LevelScreen"
+        android:label="screen_level"
+        tools:layout="@layout/screen_level" >
+        <action
+            android:id="@+id/action_levelScreen_to_gameScreen"
+            app:destination="@id/gameScreen"
+
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/gameScreen"
+        android:name="uz.gita.dima.palapan.presenter.screens.game.GameFragment"
+        android:label="screen_game"
+        tools:layout="@layout/screen_game" >
+        <action
+            android:id="@+id/action_gameScreen_to_wordsScreen"
+            app:destination="@id/wordsScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            app:popUpTo="@id/gameScreen"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="level"
+            app:argType="uz.gita.dima.palapan.data.LevelEnum" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordsScreen"
+        android:name="uz.gita.dima.palapan.presenter.screens.words.WordsScreen"
+        android:label="WordsScreen"
+        tools:layout="@layout/screen_word"/>
+</navigation>
